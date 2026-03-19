@@ -1,7 +1,14 @@
-
+"""
+Модуль для валидации данных банковского счета.
+Содержит класс Validator с набором статических методов для проверки данных.
+"""
 
 class Validator:
-
+    """
+    Класс с методами валидации для банковского счета.
+    Все методы являются статическими и не требуют создания экземпляра.
+    """
+    
     # Константы для валидации
     MIN_BALANCE = 0.0
     MAX_INTEREST_RATE = 10.0
@@ -18,10 +25,6 @@ class Validator:
         Raises:
             TypeError: Если имя не является строкой
             ValueError: Если имя пустое или содержит только пробелы
-            
-        Примеры:
-            >>> Validator.validate_owner_name("Иван Петров")
-            >>> Validator.validate_owner_name("")  # Возбудит ValueError
         """
         if not isinstance(name, str):
             raise TypeError(f"Имя владельца должно быть строкой, получен {type(name).__name__}")
@@ -29,7 +32,6 @@ class Validator:
         if not name or not name.strip():
             raise ValueError("Имя владельца не может быть пустым")
         
-        # Дополнительная проверка на минимальную длину
         if len(name.strip()) < 2:
             raise ValueError("Имя владельца должно содержать минимум 2 символа")
     
@@ -44,10 +46,6 @@ class Validator:
         Raises:
             TypeError: Если баланс не является числом
             ValueError: Если баланс меньше минимального допустимого
-            
-        Примеры:
-            >>> Validator.validate_balance(1000.50)
-            >>> Validator.validate_balance(-100)  # Возбудит ValueError
         """
         if not isinstance(balance, (int, float)):
             raise TypeError(f"Баланс должен быть числом, получен {type(balance).__name__}")
@@ -66,10 +64,6 @@ class Validator:
         Raises:
             TypeError: Если ставка не является числом
             ValueError: Если ставка вне допустимого диапазона
-            
-        Примеры:
-            >>> Validator.validate_interest_rate(5.5)
-            >>> Validator.validate_interest_rate(15)  # Возбудит ValueError
         """
         if not isinstance(rate, (int, float)):
             raise TypeError(f"Процентная ставка должна быть числом, получен {type(rate).__name__}")
@@ -143,7 +137,6 @@ class Validator:
         Raises:
             TypeError: Если target не является BankAccount
         """
-        # Импортируем здесь, чтобы избежать циклического импорта
         from model import BankAccount
         
         if not isinstance(target, BankAccount):
@@ -151,22 +144,8 @@ class Validator:
                 f"Получатель должен быть банковским счетом (BankAccount), "
                 f"получен {type(target).__name__}"
             )
-    
-    @staticmethod
-    def format_validation_error(error: Exception) -> str:
-        """
-        Форматирует сообщение об ошибке валидации.
-        
-        Args:
-            error: Исключение валидации
-            
-        Returns:
-            str: Отформатированное сообщение об ошибке
-        """
-        return f"❌ Ошибка валидации: {error}"
 
 
-# Дополнительный класс для специфических проверок банковских операций
 class TransactionValidator:
     """
     Класс для валидации банковских транзакций.
@@ -188,7 +167,10 @@ class TransactionValidator:
     def validate_withdrawal(account, amount: float) -> None:
         """
         Комплексная проверка для операции снятия.
-     
+        
+        Args:
+            account: Банковский счет
+            amount: Сумма снятия
         """
         Validator.validate_account_status(account.is_active, "Снятие")
         Validator.validate_positive_amount(amount, "Снятие")

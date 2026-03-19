@@ -1,4 +1,7 @@
-
+"""
+Модуль для работы с банковским счетом.
+Использует отдельный модуль валидации validate.py.
+"""
 
 from validate import Validator, TransactionValidator
 
@@ -202,21 +205,6 @@ class BankAccount:
         target_account.deposit(amount)
         
         return f"Перевод {amount:.2f} на счет {target_account.account_number} выполнен успешно"
-    
-    def get_account_info(self) -> dict:
-        """
-        Возвращает информацию о счете в виде словаря.
-        
-        Returns:
-            dict: Словарь с данными счета
-        """
-        return {
-            'account_number': self._account_number,
-            'owner_name': self._owner_name,
-            'balance': self._balance,
-            'interest_rate': self._interest_rate,
-            'is_active': self._is_active
-        }
     
     # Магические методы
     def __str__(self) -> str:
