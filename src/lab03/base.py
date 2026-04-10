@@ -1,5 +1,4 @@
-# base.py
-# Импортирует оригинальный BankAccount из ЛР-1, не создавая новый класс.
+
 
 import sys
 import os
