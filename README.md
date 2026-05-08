@@ -5,3 +5,6 @@
 **Лабораторная работа 3 - https://github.com/mariink13/python_labs2/tree/main/src/lab03
 
 **Лабораторная работа 4 - https://github.com/mariink13/python_labs2/tree/main/src/lab04
+
+**Лабораторная работа 5 - https://github.com/mariink13/python_labs2/tree/main/src/lab05
+
