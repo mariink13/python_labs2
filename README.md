@@ -8,3 +8,7 @@
 
 **Лабораторная работа 5 - https://github.com/mariink13/python_labs2/tree/main/src/lab05
 
+**Лабораторная работа 6 - https://github.com/mariink13/python_labs2/tree/main/src/lab06
+
+**Лабораторная работа 7 - https://github.com/mariink13/python_labs2/tree/main/src/lab07
+
