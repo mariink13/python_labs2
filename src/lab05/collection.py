@@ -82,5 +82,4 @@ class BankAccountCollection:
         for i, item in enumerate(self._items):
             self._items[i] = func(item)
         return self
-
-    # Оставшиеся методы из ЛР-2 (поиск, сортировки) можно оставить, но не обязательны.
+        
