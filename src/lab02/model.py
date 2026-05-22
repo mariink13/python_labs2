@@ -49,6 +49,7 @@ class BankAccount:
         self._is_active = True
         
     @classmethod
+    #превращаю метод в метод класса
     def _generate_account_number(cls):
         """Генерирует уникальный номер счета."""
         cls._next_account_number += 1

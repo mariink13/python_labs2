@@ -9,7 +9,6 @@ from base import BankAccount
 
 
 class SavingsAccount(BankAccount):
-    # ... (без изменений, как было ранее)
     def __init__(self, owner_name: str, initial_balance: float = 0.0,
                  interest_rate: float = 1.0, min_balance: float = 1000.0,
                  interest_bonus: float = 0.5):

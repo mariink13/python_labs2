@@ -82,4 +82,9 @@ class BankAccountCollection:
         for i, item in enumerate(self._items):
             self._items[i] = func(item)
         return self
-        
+    
+    def find(self, predicate):
+        for item in self._items:
+            if predicate(item):
+                return item
+        return None

@@ -1,5 +1,4 @@
 
-
 import sys
 import os
 
@@ -86,6 +85,7 @@ def scenario_3_protocols():
     displayable_coll.add(BankAccount("Сьюзан Майер", 5000))
     displayable_coll.add(SavingsAccount("Бри Ван де Камп", 10000, min_balance=2000))
     displayable_coll.add(CreditAccount("Габриэль Солис", 5000, credit_limit=30000))
+    displayable_coll.add("str")
 
     print("Коллекция Displayable объектов – вызов display():")
     for item in displayable_coll:
